@@ -1,5 +1,5 @@
 local Library = {}
-function Library:AddEsp(Child, Name, Color, Size, Title)
+function Library:AddESP(Child, Name, Color, Size, Title)
 local Billboard = Instance.new("BillboardGui", Child)
 local Text = Instance.new("TextLabel", Billboard)
 local Highlight = Instance.new('Highlight', Child)
@@ -34,7 +34,7 @@ task.wait(0.25) --Time Delay : 0.25/s
         }):Play()
 task.spawn(function()
 game:GetService("RunService").RenderStepped:Connect(function()
-        if _G.Rainbow then
+        if getgenv().RainbowESP then
         Text.TextColor3 = Color3.fromHSV(tick() % 10 / 10, 1, 1)
         Highlight.FillColor = Color3.fromHSV(tick() % 10 / 10, 1, 1)
         Highlight.OutlineColor = Color3.fromHSV(tick() % 10 / 10, 1, 1)
@@ -45,6 +45,13 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end
 end)
 end)
+end
+function Library:Delete(name)
+for _,v in pairs(workspace:GetDescendants()) do
+if v.Name == name then
+v:Destroy()
+end
+end
 end
 return Library
 
