@@ -26,15 +26,15 @@ local UIStroke = Instance.new("UIStroke", Text)
         Highlight.FillTransparency = 1
         Highlight.OutlineTransparency =  1
         Highlight.Name = Title
-task.wait(0.25) --Time Delay : 0.25/s
-        game:GetService('TweenService'):Create(Highlight, TweenInfo.new(1), {
-        FillTransparency = 0.9,
+task.wait(0.1)
+        game:GetService('TweenService'):Create(Highlight, TweenInfo.new(0.5), {
+        FillTransparency = 0.99,
         OutlineTransparency = 0
         }):Play()
 spawn(function()
 while wait(0.1) do
 if getgenv().DistanceESP then
-Text.Text = string.format("%s\n[%sm]", Name or Child.Name, math.floor((workspace.CurrentCamera.CFrame.Position - Child:GetPivot().Position).Magnitude))
+Text.Text = string.format("%s\n[%sm]", Name or Child.Name, math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position - Child:GetPivot().Position).Magnitude))
 else
 Text.Text = Name
 end
