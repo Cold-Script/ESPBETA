@@ -13,9 +13,8 @@ local UIStroke = Instance.new("UIStroke", Text)
         Text.BackgroundTransparency = 1
         Text.BackgroundColor3 = Color3.new(0,0,0)
         Text.TextColor3 = Color
-        Text.Font = "FredokaOne"
+        Text.Font = "Roboto"
         Text.TextSize = Size
-        Text.Text = Name
         Text.TextTransparency = 0
         Text.Visible = true
         Text.Size = UDim2.new(1,0,0,0)
@@ -32,6 +31,14 @@ task.wait(0.25) --Time Delay : 0.25/s
         FillTransparency = 0.9,
         OutlineTransparency = 0
         }):Play()
+spawn(function()
+while wait(0.1) do
+if getgenv().DistanceESP then
+Text.Text = string.format("%s\n[%sm]", Name or Child.Name, math.floor((workspace.CurrentCamera.CFrame.Position - Child:GetPivot().Position).Magnitude))
+else
+Text.Text = Name
+end
+end)
 task.spawn(function()
 game:GetService("RunService").RenderStepped:Connect(function()
         if getgenv().RainbowESP then
