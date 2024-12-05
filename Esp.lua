@@ -38,6 +38,7 @@ Text.Text = string.format("%s\n[%sm]", Name or Child.Name, math.floor((workspace
 else
 Text.Text = Name
 end
+end                                
 end)
 task.spawn(function()
 game:GetService("RunService").RenderStepped:Connect(function()
