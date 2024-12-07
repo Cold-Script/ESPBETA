@@ -3,7 +3,6 @@ function Library:AddESP(Child, Name, Color, Size, Title)
 local Billboard = Instance.new("BillboardGui", Child)
 local Text = Instance.new("TextLabel", Billboard)
 local Highlight = Instance.new('Highlight', Child)
-local UIStroke = Instance.new("UIStroke", Text)
         Billboard.AlwaysOnTop = true
         Billboard.Size = UDim2.new(0,400,0,100)
         Billboard.Adornee = Child
@@ -19,7 +18,6 @@ local UIStroke = Instance.new("UIStroke", Text)
         Text.Visible = true
         Text.Size = UDim2.new(1,0,0,0)
         Text.Position = UDim2.new(0.5,0,0.7,-35)
-        Text.Enabled = getgenv().TextESP or true
         UIStroke.Thickness = 0.75
         Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
         Highlight.FillColor = Color
