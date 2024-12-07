@@ -26,14 +26,14 @@ local Highlight = Instance.new('Highlight', Child)
         Highlight.FillTransparency = 1
         Highlight.OutlineTransparency =  1
         Highlight.Name = Title
-        Highlight.Enabled = getgenv().HighlightESP or true
+        
 task.wait(0.1)
         game:GetService('TweenService'):Create(Highlight, TweenInfo.new(0.5), {
         FillTransparency = 0.85,
         OutlineTransparency = 0
         }):Play()
 spawn(function()
-while wait(0.1) do
+while wait(0.001) do
 if getgenv().DistanceESP then
 Text.Text = string.format("%s\n[%s studs]", Name or Child.Name, math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position - Child:GetPivot().Position).Magnitude))
 else
