@@ -21,14 +21,12 @@ local Highlight = Instance.new('Highlight', Child)
         Text.Position = UDim2.new(0.5,0,0.7,-35)
         UIStroke.Thickness = 0.75
         Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-        Highlight.FillColor = Color3.new(0)
+        Highlight.FillColor = Color
         Highlight.OutlineColor = Color
         Highlight.FillTransparency = 1
         Highlight.OutlineTransparency =  1
         Highlight.Name = Title
-        
-task.wait(0.1)
-        game:GetService('TweenService'):Create(Highlight, TweenInfo.new(0.5), {
+        game:GetService('TweenService'):Create(Highlight, TweenInfo.new(1), {
         FillTransparency = 0.85,
         OutlineTransparency = 0
         }):Play()
