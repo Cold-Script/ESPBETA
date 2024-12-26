@@ -33,50 +33,11 @@ local Highlight = Instance.new('Highlight', Child)
 spawn(function()
 while wait(0.001) do
 if getgenv().DistanceESP then
-Text.Text = string.format("%s\n[%s studs]", Name or Child.Name, math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position - Child:GetPivot().Position).Magnitude))
+Text.Text = string.format("%s\n[%s]", Name or Child.Name, math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position - Child:GetPivot().Position).Magnitude))
 else
 Text.Text = Name
 end
 end                                
-end)
-task.spawn(function()
-game:GetService("RunService").RenderStepped:Connect(function()
-if getgenv().GuidingESP then
-        Text.TextColor3 = Color3.fromRGB(180, 255, 255)
-        Highlight.FillColor = Color3.fromRGB(180, 255, 255)
-        Highlight.OutlineColor = Color3.fromRGB(180, 255, 255)
-        else
-        Text.TextColor3 = Color
-        Highlight.FillColor = Color
-        Highlight.OutlineColor = Color
-end      
-end)
-end)
-task.spawn(function()
-game:GetService("RunService").RenderStepped:Connect(function()
-if getgenv().CuriousESP then
-        Text.TextColor3 = Color3.fromRGB(255, 255, 100)
-        Highlight.FillColor = Color3.fromRGB(255, 255, 100)
-        Highlight.OutlineColor = Color3.fromRGB(255, 255, 100)
-        else
-        Text.TextColor3 = Color
-        Highlight.FillColor = Color
-        Highlight.OutlineColor = Color
-end
-end)
-end)
-task.spawn(function()
-game:GetService("RunService").RenderStepped:Connect(function()
-if getgenv().ModifierESP then
-        Text.TextColor3 = Color3.fromRGB(255, 0, 0)
-        Highlight.FillColor = Color3.fromRGB(255, 0, 0)
-        Highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
-        else
-        Text.TextColor3 = Color
-        Highlight.FillColor = Color
-        Highlight.OutlineColor = Color
-end
-end)
 end)
 task.spawn(function()
 game:GetService("RunService").RenderStepped:Connect(function()
