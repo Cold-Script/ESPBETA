@@ -41,10 +41,37 @@ end
 end)
 task.spawn(function()
 game:GetService("RunService").RenderStepped:Connect(function()
-        if getgenv().RainbowESP then
+if getgenv().RainbowESP then
         Text.TextColor3 = Color3.fromHSV(tick() % 10 / 10, 1, 1)
         Highlight.FillColor = Color3.fromHSV(tick() % 10 / 10, 1, 1)
         Highlight.OutlineColor = Color3.fromHSV(tick() % 10 / 10, 1, 1)
+        else
+        Text.TextColor3 = Color
+        Highlight.FillColor = Color
+        Highlight.OutlineColor = Color
+end
+if getgenv().GuidingESP then
+        Text.TextColor3 = Color3.fromRGB(180, 255, 255)
+        Highlight.FillColor = Color3.fromRGB(180, 255, 255)
+        Highlight.OutlineColor = Color3.fromRGB(180, 255, 255)
+        else
+        Text.TextColor3 = Color
+        Highlight.FillColor = Color
+        Highlight.OutlineColor = Color
+end                
+if getgenv().CuriousESP then
+        Text.TextColor3 = Color3.fromRGB(255, 255, 100)
+        Highlight.FillColor = Color3.fromRGB(255, 255, 100)
+        Highlight.OutlineColor = Color3.fromRGB(255, 255, 100)
+        else
+        Text.TextColor3 = Color
+        Highlight.FillColor = Color
+        Highlight.OutlineColor = Color
+end
+if getgenv().ModifierESP then
+        Text.TextColor3 = Color3.fromRGB(255, 0, 0)
+        Highlight.FillColor = Color3.fromRGB(255, 0, 0)
+        Highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
         else
         Text.TextColor3 = Color
         Highlight.FillColor = Color
