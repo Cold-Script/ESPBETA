@@ -26,9 +26,9 @@ local Highlight = Instance.new('Highlight', Child)
         Highlight.FillTransparency = 1
         Highlight.OutlineTransparency =  1
         Highlight.Name = Title
-        game:GetService('TweenService'):Create(Highlight, TweenInfo.new(1), {
-        FillTransparency = 0.85,
-        OutlineTransparency = 0
+        game:GetService('TweenService'):Create(Highlight, TweenInfo.new(0), {
+        FillTransparency = getgenv().FillTransparency or 0.85,
+        OutlineTransparency = getgenv().OutlineTransparency or 0
         }):Play()
 spawn(function()
 while wait(0.001) do
